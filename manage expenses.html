@@ -124,131 +124,24 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-body{
-    min-height:100vh;
-    /* background-color:rgb(9, 4, 27); */
-    background-color: #2c2358;
-    /* background-image: linear-gradient(#2c2358 ,#522f6d,#446bb6,#39348e ); */
-    background-size:cover;
-    background-position: center;
-    
-
-}
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    transition: top 0.3s; /* Add smooth transition effect */
-    background-color: #2c2358;
-
-    
-}
-
-.logo{
-    font-size:30px;
-    color:#fff;
-    text-decoration: none;
-    font-weight:700;
-
-}
-
-.navbar a {
-    position: relative;
-    font-size:14px;
-    color:#fff;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 40px;
-
-
-    height: 60px; /* Set the height of the navbar */
-   
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0; 
-    height: 2px;
-    background: #fff;
-    transition: width 0.3s; 
-}
-
-.navbar a:hover::before {
-    width: 100%; 
-}
-
-#buttons-container {
-    text-align: right; /* Align buttons to the right */
-    margin-top: 10px; /* Add margin at the top */
-
-}
-
-button {
-    background-color: transparent;
-    padding: 10px 20px;
-    font-size: 14px;
-    border: 2px solid #ffffff; /* White border */
-    border-radius: 30px;
-    color: #ffffff; /* Text color */
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add transition for smoother color change */
-    margin-left: 15px; /* Add space between buttons */
-}
-
-button:first-child {
-    margin-left: 0; /* Remove margin from the first button */
-}
-
-button a {
-    color: #ffffff; /* Change text color of anchor tags inside buttons */
-    text-decoration: none;
-}
-
-button:hover {
-    background-color: transparent; /* Change background color on hover */
-    color: #fff; /* Change text color on hover */
-    border-color: #8d5caa; /* Change border color on hover */
-}
-
 
   </style>
 </head>
 <body>
-  <header class="header">
-    <a href="file:///D:/workspace/main%20pfm/main%20page%20copy.html#" class="logo">FINANCER.COM</a>
-    <nav class="navbar">
-        <a class="active" href="file:///D:/workspace/main%20pfm/main%20page%20copy.html#">Home</a>
-        <a href="#">Contact</a>
-        <a href="#">About</a>
-        <a href="#">Manage</a>
-        <a href="#">Library</a>
-    </nav>
-    <div id="buttons-container">
-        <button type="button"><a href="file:///D:/workspace/main%20pfm/login.html?#">LOGIN</a></button>
-        <button type="button"><a href="file:///D:/workspace/main%20pfm/signup.html#">SIGN UP</a></button>
-    </div>
-</header>
+  <header>
+    <h1 id="header">YOUR PERSONAL FINANCE MANAGER</h1>
+          <a id="logo" href="./index.html">Home</a>
+          <a href="./login page.html">Login</a>
+          <!-- <a href="file:///D:/workspace/fee%20project/sign%20up%20page.html" target="_blank">SIGN UP</a> -->
+  
+          <a href="./contact us.html">Contact us</a>
+          <a href="./manage expenses.html" target="_blank">Manage</a>
+    </header>
   <div>
     <div class="container">
         
       <div class="balance">
-    <h2>Your Balance: <span id="balance">$1000</span></h2></div><br>
+    <h2>Your Balance: <span id="balance">1000</span></h2></div><br>
     <div class="expense-form">
     <h2>Add Expense</h2><br>
     <h5>Expense Description:</h5>
@@ -286,7 +179,7 @@ button:hover {
 
     // Function to update balance display
     function updateBalance() {
-      document.getElementById('balance').textContent = `$${balance}`;
+      document.getElementById('balance').textContent = $${balance};
     }
 
     // Function to display expenses in the list
@@ -296,7 +189,7 @@ button:hover {
 
       expenses.forEach(expense => {
         const li = document.createElement('li');
-        li.textContent = `${expense.description}: $${expense.amount}`;
+        li.textContent = ${expense.description}: $${expense.amount};
         expensesList.appendChild(li);
       });
     }
