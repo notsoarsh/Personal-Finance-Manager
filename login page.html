@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+margin: 0;
+padding: 0;
+background-color: #f9dbbd;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+/* background-image: url("https://i.pinimg.com/originals/04/99/dd/0499dd060c8d81cb3f118cc8f564a20c.jpg"); */
+background-image: url("https://i.pinimg.com/originals/16/be/65/16be650d5b71fbee20aa8d1e30d0be3c.png");
+}
+
+a{
+margin-right:100px;
+color:whitesmoke;
+}
+
+h1{
+
+text-align: center;
+text-decoration:#450920;
+font-weight:300;
+font-family: fantasy;
+}
+
+header {
+background-color:#450920;
+color: #fff;
+text-align: center;
+padding: 1rem ;
+background-image: linear-gradient(to bottom right, #7b0633, #dad7cd);
+font-family: fantasy;
+}
+div{
+height:200px;
+width:200px;
+background-color:#eae0d5;
+border:1.5px solid #a53860;
+border-radius:25px;
+padding:50px;
+align-items: center;
+margin:auto;
+
+}
+h4{
+color:#a53860;
+}
+p{
+color:#a53860
+ }
+
+ a:link {
+  color: #a53860;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color:#a53860;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a53860;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #a53860;
+  background-color: transparent;
+  text-decoration: underline;
+}
+p{
+text-align: center;
+color:black;
+}
+button{
+  background-color:#a53860;
+  border: white;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;}
+
+footer{
+  text-align:right;
+  font-size:smaller;
+}
+  </style>
+    <meta charset="UTF-8" />
+    </head>
+<body>
+  <script>const http = require('http');
+    const url = require('url');
+    const qs = require('querystring');
+    
+    http.createServer((req, res) => {
+     if (req.method === 'POST') {
+        let body = '';
+    
+        req.on('data', (chunk) => {
+          body += chunk;
+        });
+    
+        req.on('end', () => {
+          let data = qs.parse(body);
+    
+          if (data.username === 'test' && data.password === 'password') {
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end('Logged in successfully!');
+          } else {
+            res.writeHead(401, { 'Content-Type': 'text/plain' });
+            res.end('Invalid credentials');
+          }
+        });
+     } else {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(`
+          <form method="post" action="/login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+            <br />
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <br />
+            <button type="submit">Login</button>
+          </form>
+        `);
+     }
+    }).listen(3000, () => {
+     console.log('Server is running on http://localhost:3000');
+    });
+    
+
+    // login page validation
+    function validateForm(event) {
+          event.preventDefault(); // Prevent the default form submission
+      
+          // Get form inputs
+          const username = document.getElementById('username').value.trim();
+          const password = document.getElementById('password').value.trim();
+      
+          // Check if inputs are empty
+          if (username === '' || password === '') {
+              alert('Please fill in all fields');
+              return false;
+          }
+      
+          // Validation successful - submit the form
+          document.getElementById('loginForm').submit();
+    </script>
+    <header>
+      <h1>YOUR PERSONAL FINANCE MANAGER</h1>
+            <a id="logo" href="file:///D:/workspace/fee%20project/fee%20project%20main%20page.html">Home</a>
+            <a href="file:///D:/workspace/fee%20project/login%20page.html" target="_blank">Login</a>
+            <!-- <a href="file:///D:/workspace/fee%20project/sign%20up%20page.html" target="_blank">SIGN UP</a> -->
+    
+            <a href="file:///D:/workspace/fee%20project/contact%20us.html#">Contact us</a>
+            <a href="file:///D:/workspace/fee%20project/manage%20expenses.html" target="_blank">Manage</a>
+    </header>
+    <h1>LOGIN</h1>
+<div>
+      <h4> Username/email</h4>
+       <input type="enter"value="">
+       <h4>Password</h4>
+       <input type="enter"value=""><br><br>
+       <a href="manage expenses.html"><button>Login</button></a>
+    </div>
+    
+    </p>
+</body>
+</html>
